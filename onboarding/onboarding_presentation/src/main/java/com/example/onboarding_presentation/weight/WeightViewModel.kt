@@ -45,7 +45,7 @@ class WeightViewModel@Inject constructor(
             }
 
 
-            _uiEvent.send(UiEvent.Navigate(Route.NUTRIENT_GOAL))
+            _uiEvent.send(UiEvent.Navigate(Route.ACTIVITY))
             prefences.saveWeight(weightNumber)
 
         }

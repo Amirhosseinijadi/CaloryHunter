@@ -14,9 +14,12 @@ import androidx.navigation.compose.rememberNavController
 import com.example.caloryhunter.navigation.navigate
 import com.example.caloryhunter.ui.theme.CaloryTrackerTheme
 import com.example.core.navigation.Route
+import com.example.onboarding_presentation.activity.ActivityScreen
 import com.example.onboarding_presentation.age.AgeScreen
 import com.example.onboarding_presentation.gender.GenderScreen
+import com.example.onboarding_presentation.goal.GoalScreen
 import com.example.onboarding_presentation.height.HeightScreen
+import com.example.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import com.example.onboarding_presentation.weight.WeightScreen
 import com.example.onboarding_presentation.welcome.WelcomScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -57,21 +60,17 @@ class MainActivity : ComponentActivity() {
                         composable(Route.WEIGHT) {
                           WeightScreen(scaffoldState = scafoldState, onNavigate = navcontroller::navigate)
                         }
-                        composable(Route.NUTRIENT_GOAL) {
-
-                        }
-                        composable(Route.NUTRIENT_GOAL) {
-
-                        }
-                        composable(Route.NUTRIENT_GOAL) {
-
-                        }
                         composable(Route.ACTIVITY) {
-
+                            ActivityScreen(onNavigate = navcontroller::navigate )
                         }
                         composable(Route.GOAL) {
-
+                          GoalScreen(onNavigate = navcontroller::navigate)
                         }
+                        composable(Route.NUTRIENT_GOAL) {
+                          NutrientGoalScreen(scaffoldState = scafoldState, onNavigate = navcontroller::navigate)
+                        }
+
+
                         composable(Route.TRACKER_OVERVIEW) {
 
                         }
